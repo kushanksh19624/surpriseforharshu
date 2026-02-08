@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Harshita ❤️</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        h1 { color: #d63384; }
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #yesBtn { background-color: #ff4d6d; color: white; }
+        #noBtn { background-color: #6c757d; color: white; position: relative; }
+        .hidden { display: none; }
+        img { width: 200px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainContainer">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpuaGZ4NjRscms0eHByZzR3eHByZzR3eHByZzR3eHByZzR3JnB0X2VpZD1Wb0ZGUm9LdVpS" alt="Cute Cat">
+        <h1>Harshita, will you be mine this Valentine's?</h1>
+        <div class="buttons">
+            <button id="yesBtn">Yes!</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="successContainer">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXMxaHNscms0eHByZzR3eHByZzR3eHByZzR3eHByZzR3JnB0X2VpZD1Wb0ZGUm9LdVpS" alt="Happy Dance">
+        <h1>"Harshu, tumhari smile meri favourite notification hai. Kya main tumhara favourite person ban sakta hoon?"❤️</h1>
+        <p>You've made me the happiest person today!</p>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const mainContainer = document.getElementById('mainContainer');
+        const successContainer = document.getElementById('successContainer');
+
+        // Make the "No" button run away
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        });
+
+        // Show success message
+        yesBtn.addEventListener('click', () => {
+            mainContainer.classList.add('hidden');
+            successContainer.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
